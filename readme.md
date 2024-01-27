@@ -1,0 +1,1 @@
+Esta api permite obtener datos sobre discos de Soda Stereo y Gustavo Cerati. Esta desarrollada con Node JS y Express. 
