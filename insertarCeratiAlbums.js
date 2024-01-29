@@ -11,6 +11,25 @@ const cerati = async () => {
             try {
                 const con = await conDb();
                 const sql = "insert into cerati_albums (id, title, link, cover_medium, tracklist, release_date, type) values(?, ?, ?, ?, ?, ?, ?)";
+                const chequeaTabla = () => {
+                    return new Promise((resolve, reject) => {
+                        const sql = "select * from cerati_albums";
+                        con.query(sql, (err, result) => {
+                            if (err) {
+                                reject(err.message);
+                                return;
+                            }
+                            resolve(result);
+                        });
+                    });
+                }
+const datos = await chequeaTabla();
+if (datos.length) {
+    console.log("La tabla ya contiene los datos");
+    await con.end();
+    console.log("Cerrada");
+    return;
+}
                 await Promise.all(albumsDb.map(async album => {
                     await con.query(sql, [album.id, album.title, album.link, album.cover_medium, album.tracklist, album.release_date, album.type], (err, results) => {
                         if (err) {

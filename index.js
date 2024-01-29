@@ -7,12 +7,12 @@ const app = express();
 const port = process.env.port;
 
 app.use(express.json());
-//cerati();
-//soda();
+cerati();
+soda();
 
-//routerApi(app);
+routerApi(app);
 app.get("/", (req, res) => {
-    res.send("Welcome! puerto: "+port);
+    res.send("Welcome!");
 });
 
 app.listen(port, () => {

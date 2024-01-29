@@ -1,0 +1,3 @@
+create table soda_albums (id int not null primary key, title varchar(100) not null, link varchar(100) not null, cover_medium text not null, tracklist varchar(100) not null, release_date varchar(100) not null, type varchar(100) not null);
+
+create table cerati_albums (id int not null primary key, title varchar(100) not null, link varchar(100) not null, cover_medium text not null, tracklist varchar(100) not null, release_date varchar(100) not null, type varchar(100) not null);
