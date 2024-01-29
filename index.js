@@ -10,7 +10,10 @@ app.use(express.json());
 //cerati();
 //soda();
 
-routerApi(app);
+//routerApi(app);
+app.get("/", (req, res) => {
+    res.send("Welcome! puerto: "+port);
+});
 
 app.listen(port, () => {
     console.log("Escuchando en el puerto:", port);
