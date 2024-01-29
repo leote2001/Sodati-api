@@ -7,7 +7,7 @@ class SodaCerati {
             let con;
             try {
                 con = await conDb();
-                const sql = `select * from ${table}`;
+                const sql = `select id, title, link, cover_medium, release_date, type from ${table}`;
                 con.query(sql, (err, result) => {
                     if (err) {
                         reject(new Error("Error al obtener albums"));
@@ -28,7 +28,7 @@ class SodaCerati {
             let con;
             try {
                 con = await conDb();
-                const sql = `select * from ${table} where id = ?`;
+                const sql = `select id, title, link, cover_medium, release_date, type from ${table} where id = ?`;
                 con.query(sql, [id], (err, result) => {
                     if (err) {
                         reject(new Error("Error al obtener el album"));
