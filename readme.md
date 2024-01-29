@@ -6,7 +6,6 @@ Esta api permite obtener datos sobre discos de Soda Stereo y Gustavo Cerati. Est
 ### Base URL
 El punto de acceso principal para la API es: `https://sodati-api.onrender.com`
 
-Endpoints
 ### Obtener todos los discos de Soda Stereo
 Endpoint:
 GET /soda/
@@ -64,6 +63,5 @@ Ejemplo de Uso:
 curl https://sodati-api.onrender.com/cerati/1/tracks
 
 ### Notas importantes
-Asegúrate de incluir el prefijo `https://` al realizar las solicitudes a la API.
 Todos los endpoints devuelven datos en formato JSON.
 Los IDs de los discos y canciones pueden ser obtenidos a través de los endpoints que devuelven la lista completa.
