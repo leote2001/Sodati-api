@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,12 +48,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>Sodati</h1>
 
   <h2>Documentation</h2>
-  <p>Sodati es una interfaz que te permite acceder a información detallada sobre los discos de Soda Stereo y Gustavo Cerati. La API utiliza la plataforma Deezer como punto de partida para obtener datos y los almacena en una base de datos MySQL. A continuación, se detallan los endpoints disponibles:</p>
+  <p>Sodati es una interfaz que te permite acceder a información detallada sobre los discos de Soda Stereo y Gustavo
+    Cerati. La API utiliza la plataforma Deezer como punto de partida para obtener datos y los almacena en una base de
+    datos MySQL. A continuación, se detallan los endpoints disponibles:</p>
 
   <h3>Base URL</h3>
   <p>El punto de acceso principal para la API es: <code>https://sodati-api.onrender.com</code></p>
@@ -87,7 +91,8 @@
   <ul>
     <li><code>id</code>: Identificador único del disco.</li>
   </ul>
-  <p>Este endpoint te proporciona una lista de todas las canciones de un disco de Soda Stereo según su ID. Ejemplo de Uso:</p>
+  <p>Este endpoint te proporciona una lista de todas las canciones de un disco de Soda Stereo según su ID. Ejemplo de
+    Uso:</p>
   <pre>
     <code>curl https://sodati-api.onrender.com/soda/1/tracks</code>
   </pre>
@@ -109,7 +114,8 @@
   <ul>
     <li><code>id</code>: Identificador único del disco.</li>
   </ul>
-  <p>Este endpoint te permite obtener detalles sobre un disco específico de Gustavo Cerati según su ID. Ejemplo de Uso:</p>
+  <p>Este endpoint te permite obtener detalles sobre un disco específico de Gustavo Cerati según su ID. Ejemplo de Uso:
+  </p>
   <pre>
     <code>curl https://sodati-api.onrender.com/cerati/1/album</code>
   </pre>
@@ -122,13 +128,16 @@
   <ul>
     <li><code>id</code>: Identificador único del disco.</li>
   </ul>
-  <p>Este endpoint te proporciona una lista de todas las canciones de un disco de Gustavo Cerati según su ID. Ejemplo de Uso:</p>
+  <p>Este endpoint te proporciona una lista de todas las canciones de un disco de Gustavo Cerati según su ID. Ejemplo de
+    Uso:</p>
   <pre>
     <code>curl https://sodati-api.onrender.com/cerati/1/tracks</code>
   </pre>
 
   <h3>Notas importantes</h3>
-  <p>Todos los endpoints devuelven datos en formato JSON. Los IDs de los discos y canciones pueden ser obtenidos a través de los endpoints que devuelven la lista completa.</p>
-
+  <p>Todos los endpoints devuelven datos en formato JSON. Los IDs de los discos y canciones pueden ser obtenidos a
+    través de los endpoints que devuelven la lista completa.</p>
+  <p><a href="https://github.com/leote2001/Sodati-api">Proyecto en GitHub</a></p>
 </body>
+
 </html>
