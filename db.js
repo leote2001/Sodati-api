@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require("mysql2/promise");
 require("dotenv").config();
 const config = {
     host: process.env.db_host, 
@@ -7,17 +7,8 @@ const config = {
     database: process.env.db_database, 
     port: process.env.db_port || "3306"
 }
-const conDb = () => {
-    const con = mysql.createConnection(config);
-    return new Promise((resolve, reject) => {
-        con.connect(err => {
-            if (err) {
-                reject(new Error("No se pudo realizar la conexión a la base de datos"));
-            } else {
-            resolve(con);
-            console.log("Conectado");
-            }
-        });
-    });
-} 
+const conDb = async () => {
+    const con = await mysql.createConnection(config);
+    return con;
+}
 module.exports = conDb;
