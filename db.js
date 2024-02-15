@@ -5,7 +5,7 @@ const config = {
     user: process.env.db_user, 
     password: process.env.db_password, 
     database: process.env.db_database, 
-    port: process.env.db_port || ""
+    port: process.env.db_port || "3306"
 }
 const conDb = () => {
     const con = mysql.createConnection(config);

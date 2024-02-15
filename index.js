@@ -32,6 +32,6 @@ app.get("/", async (req, res) => {
 
 //routerApi(app);
 
-app.listen(port,"0.0.0.0", () => {
+app.listen(port, "0.0.0.0", () => {
     console.log("Escuchando en el puerto:", port);
 });
