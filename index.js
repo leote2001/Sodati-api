@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
     }
 });
 
-routerApi(app);
+//routerApi(app);
 
 app.listen(port, () => {
     console.log("Escuchando en el puerto:", port);
