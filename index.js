@@ -5,7 +5,7 @@ const cerati = require("./insertarCeratiAlbums");
 const routerApi = require("./routes");
 require("dotenv").config();
 const app = express();
-const port = process.env.port;
+const port = process.env.port || 3000;
 
 app.use(express.json());
 
@@ -32,6 +32,6 @@ app.get("/", async (req, res) => {
 
 //routerApi(app);
 
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
     console.log("Escuchando en el puerto:", port);
 });
