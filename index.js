@@ -41,6 +41,6 @@ app.get("/", async (req, res) => {
 routerApi(app);
 
 // Iniciar el servidor
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
     console.log("Escuchando en el puerto:", port);
 });
