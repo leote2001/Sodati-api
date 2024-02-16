@@ -1,7 +1,6 @@
 const express = require("express");
 const routerApi = require("./routes");
 const crearTablas = require("./crearTablas");
-require("dotenv").config();
 const soda = require("./insertarSodaAlbums");
 const cerati = require("./insertarCeratiAlbums");
 const app = express();
@@ -15,21 +14,14 @@ app.use((err, req, res, next) => {
 const tablas = async () => {
     try {
         await crearTablas();
+        await soda();
+        await cerati();
     } catch (err) {
         next(err);
     }
 }
 tablas();
-const datosTablas = async () => {
-    try {
-await soda();
-await cerati();
-    } catch(err) {
-        next(err);
-    }
-}
-datosTablas();
-//routerApi();
+routerApi(app);
 app.get("/", (req, res) => {
     res.send("Welcome!");
 });
