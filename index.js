@@ -19,7 +19,19 @@ const tablas = async () => {
     }
 }
 tablas();
+const datosTablas = async () => {
+    try {
+await soda();
+await cerati();
+    } catch(err) {
+        next(err);
+    }
+}
+datosTablas();
 //routerApi();
+app.get("/", (req, res) => {
+    res.send("Welcome!");
+});
 app.listen(port, () => {
     console.log("Escuchando en el puerto:", port);
 });
