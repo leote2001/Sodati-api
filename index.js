@@ -2,7 +2,8 @@ const express = require("express");
 const routerApi = require("./routes");
 const crearTablas = require("./crearTablas");
 require("dotenv").config();
-
+const soda = require("./insertarSodaAlbums");
+const cerati = require("./insertarCeratiAlbums");
 const app = express();
 const port = process.env.PORT || 3000;
 
