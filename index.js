@@ -5,7 +5,12 @@ const soda = require("./insertarSodaAlbums");
 const cerati = require("./insertarCeratiAlbums");
 const app = express();
 const port = process.env.PORT || 3000;
-
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 app.use(express.json());
 app.use((err, req, res, next) => {
     console.error(err.message);
