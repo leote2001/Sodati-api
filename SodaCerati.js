@@ -1,4 +1,4 @@
-const axios = require("axios");
+/*const axios = require("axios");
 const pool = require("./db");
 
 class SodaCerati {
@@ -58,4 +58,66 @@ class SodaCerati {
         }
     }
 }
+module.exports = SodaCerati;*/
+// PostgreSQL
+require("dotenv").config();
+const axios = require("axios");
+const { Pool } = require("pg");
+
+class SodaCerati {
+    constructor() {
+this.pool = new Pool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT || 5432, // Default PostgreSQL port is 5432
+});
+        }
+
+    async getAlbums(table) {
+        const sql = `SELECT id, title, link, cover_medium, release_date, type FROM ${table}`;
+        try {
+            const client = await this.pool.connect();
+            const result = await client.query(sql);
+            client.release();
+            return result.rows;
+        } catch (err) {
+            throw new Error("Error fetching albums");
+        }
+    }
+
+    async getAlbumById(id, table) {
+        const sql = `SELECT id, title, link, cover_medium, release_date, type FROM ${table} WHERE id = $1`;
+        try {
+            const client = await this.pool.connect();
+            const result = await client.query(sql, [id]);
+            client.release();
+            if (result.rows.length === 0) {
+                throw new Error("Album not found");
+            }
+            return result.rows;
+        } catch (err) {
+            throw err;
+        }
+    }
+
+    async getAlbumTracklist(id, table) {
+        const sql = `SELECT tracklist FROM ${table} WHERE id = $1`;
+        try {
+            const client = await this.pool.connect();
+            const result = await client.query(sql, [id]);
+            client.release();
+            if (result.rows.length === 0) {
+                throw new Error("Album not found");
+            }
+            const tracklistUrl = result.rows[0].tracklist;
+            const response = await axios.get(tracklistUrl);
+            return response.data.data;
+        } catch (err) {
+            throw err;
+        }
+    }
+}
+
 module.exports = SodaCerati;

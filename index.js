@@ -4,6 +4,7 @@ const crearTablas = require("./crearTablas");
 const soda = require("./insertarSodaAlbums");
 const cerati = require("./insertarCeratiAlbums");
 const app = express();
+require("dotenv").config();
 const port = process.env.PORT || 3000;
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
