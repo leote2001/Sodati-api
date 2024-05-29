@@ -1,0 +1,6 @@
+.env
+node_modules/
+albums.json
+railway_db_variables.txt
+render_postgresql_db_variables.txt
+crearTablas.js
