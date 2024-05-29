@@ -13,49 +13,49 @@ Este endpoint te proporciona una lista de todos los discos de Soda Stereo.
 
 **Ejemplo de Uso:**
 curl https://sodati-api.portfolio-ls.online/soda/
-Obtener un disco específico de Soda Stereo por ID
-Endpoint:
+## Obtener un disco específico de Soda Stereo por ID
+**Endpoint:**
 GET /soda/{id}/album
-Parámetros:
+**Parámetros:**
 • `id`: Identificador único del disco.
-Descripción:
+**Descripción:**
 Este endpoint te permite obtener detalles sobre un disco específico de Soda Stereo según su ID.
-Ejemplo de Uso:
+**Ejemplo de Uso:**
 curl https://sodati-api.portfolio-ls.online/soda/1/album
-Obtener todas las canciones de un disco de Soda Stereo por ID
-Endpoint:
+## Obtener todas las canciones de un disco de Soda Stereo por ID
+**Endpoint:**
 GET /soda/{id}/tracks
-Parámetros:
+**Parámetros:**
 • `id`: Identificador único del disco.
-Descripción:
+**Descripción:**
 Este endpoint te proporciona una lista de todas las canciones de un disco de Soda Stereo según su ID.
-Ejemplo de Uso:
+**Ejemplo de Uso:**
 curl https://sodati-api.portfolio-ls.online/soda/1/tracks
-Obtener todos los discos de Gustavo Cerati
-Endpoint:
+## Obtener todos los discos de Gustavo Cerati
+**Endpoint:**
 GET /cerati/
-Descripción:
+**Descripción:**
 Este endpoint te proporciona una lista de todos los discos de Gustavo Cerati.
-Ejemplo de Uso:
+**Ejemplo de Uso:**
 curl https://sodati-api.portfolio-ls.online/cerati/
-Obtener un disco específico de Gustavo Cerati por ID
-Endpoint:
+## Obtener un disco específico de Gustavo Cerati por ID
+**Endpoint:**
 GET /cerati/{id}/album
-Parámetros:
+**Parámetros:**
 • `id`: Identificador único del disco.
-Descripción:
+**Descripción:**
 Este endpoint te permite obtener detalles sobre un disco específico de Gustavo Cerati según su ID.
-Ejemplo de Uso:
+**Ejemplo de Uso:**
 curl https://sodati-api.portfolio-ls.online/cerati/1/album
-Obtener todas las canciones de un disco de Gustavo Cerati por ID
-Endpoint:
+## Obtener todas las canciones de un disco de Gustavo Cerati por ID
+**Endpoint:**
 GET /cerati/{id}/tracks
-Parámetros:
+**Parámetros:**
 • `id`: Identificador único del disco.
-Descripción:
+**Descripción:**
 Este endpoint te proporciona una lista de todas las canciones de un disco de Gustavo Cerati según su ID.
-Ejemplo de Uso:
+**Ejemplo de Uso:**
 curl https://sodati-api.portfolio-ls.online/cerati/1/tracks
-Notas importantes
+## Notas importantes
 • Todos los endpoints devuelven datos en formato JSON.
 • Los IDs de los discos y canciones pueden ser obtenidos a través de los endpoints que devuelven la lista completa.
