@@ -1,8 +1,9 @@
-import express from "express";
+import express, {Express} from "express";
 import cors from "cors";
 import helmet from "helmet";
 
-export const app = express();
+export const app: Express = express();
+
 app.use(cors());
 app.use(helmet());
 
