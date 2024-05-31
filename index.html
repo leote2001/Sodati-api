@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sodati Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #e74c3c;
+        }
+        .endpoint {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .endpoint h3 {
+            margin-top: 0;
+        }
+        code {
+            display: block;
+            background-color: #f9f9f9;
+            border-left: 3px solid #e74c3c;
+            padding: 10px;
+            margin: 10px 0;
+            color: #333;
+            overflow-x: auto;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: url('https://img.icons8.com/ios-filled/15/000000/chevron-right.png') no-repeat left center;
+            padding-left: 20px;
+        }
+        .note {
+            background-color: #fffbdd;
+            border-left: 4px solid #ffeb3b;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sodati Documentation</h1>
+    <p>Sodati es una interfaz que te permite acceder a información detallada sobre los discos de Soda Stereo y Gustavo Cerati. La API utiliza la plataforma Deezer como punto de partida para obtener datos y los almacena en una base de datos MySQL. A continuación, se detallan los endpoints disponibles:</p>
+    
+    <h2>Base URL</h2>
+    <p>El punto de acceso principal para la API es: <code>https://sodati-api.portfolio-ls.online</code></p>
+    
+    <div class="endpoint">
+        <h3>Obtener todos los discos de Soda Stereo</h3>
+        <p><strong>Endpoint:</strong> <code>GET /soda/</code></p>
+        <p><strong>Descripción:</strong> Este endpoint te proporciona una lista de todos los discos de Soda Stereo.</p>
+        <p><strong>Ejemplo de Uso:</strong></p>
+        <code>curl https://sodati-api.portfolio-ls.online/soda/</code>
+    </div>
+    
+    <div class="endpoint">
+        <h3>Obtener un disco específico de Soda Stereo por ID</h3>
+        <p><strong>Endpoint:</strong> <code>GET /soda/{id}/album</code></p>
+        <p><strong>Parámetros:</strong></p>
+        <ul>
+            <li><code>id</code>: Identificador único del disco.</li>
+        </ul>
+        <p><strong>Descripción:</strong> Este endpoint te permite obtener detalles sobre un disco específico de Soda Stereo según su ID.</p>
+        <p><strong>Ejemplo de Uso:</strong></p>
+        <code>curl https://sodati-api.portfolio-ls.online/soda/1/album</code>
+    </div>
+    
+    <div class="endpoint">
+        <h3>Obtener todas las canciones de un disco de Soda Stereo por ID</h3>
+        <p><strong>Endpoint:</strong> <code>GET /soda/{id}/tracks</code></p>
+        <p><strong>Parámetros:</strong></p>
+        <ul>
+            <li><code>id</code>: Identificador único del disco.</li>
+        </ul>
+        <p><strong>Descripción:</strong> Este endpoint te proporciona una lista de todas las canciones de un disco de Soda Stereo según su ID.</p>
+        <p><strong>Ejemplo de Uso:</strong></p>
+        <code>curl https://sodati-api.portfolio-ls.online/soda/1/tracks</code>
+    </div>
+    
+    <div class="endpoint">
+        <h3>Obtener todos los discos de Gustavo Cerati</h3>
+        <p><strong>Endpoint:</strong> <code>GET /cerati/</code></p>
+        <p><strong>Descripción:</strong> Este endpoint te proporciona una lista de todos los discos de Gustavo Cerati.</p>
+        <p><strong>Ejemplo de Uso:</strong></p>
+        <code>curl https://sodati-api.portfolio-ls.online/cerati/</code>
+    </div>
+    
+    <div class="endpoint">
+        <h3>Obtener un disco específico de Gustavo Cerati por ID</h3>
+        <p><strong>Endpoint:</strong> <code>GET /cerati/{id}/album</code></p>
+        <p><strong>Parámetros:</strong></p>
+        <ul>
+            <li><code>id</code>: Identificador único del disco.</li>
+        </ul>
+        <p><strong>Descripción:</strong> Este endpoint te permite obtener detalles sobre un disco específico de Gustavo Cerati según su ID.</p>
+        <p><strong>Ejemplo de Uso:</strong></p>
+        <code>curl https://sodati-api.portfolio-ls.online/cerati/1/album</code>
+    </div>
+    
+    <div class="endpoint">
+        <h3>Obtener todas las canciones de un disco de Gustavo Cerati por ID</h3>
+        <p><strong>Endpoint:</strong> <code>GET /cerati/{id}/tracks</code></p>
+        <p><strong>Parámetros:</strong></p>
+        <ul>
+            <li><code>id</code>: Identificador único del disco.</li>
+        </ul>
+        <p><strong>Descripción:</strong> Este endpoint te proporciona una lista de todas las canciones de un disco de Gustavo Cerati según su ID.</p>
+        <p><strong>Ejemplo de Uso:</strong></p>
+        <code>curl https://sodati-api.portfolio-ls.online/cerati/1/tracks</code>
+    </div>
+    
+    <div class="note">
+        <h3>Notas importantes</h3>
+        <ul>
+            <li>Todos los endpoints devuelven datos en formato JSON.</li>
+            <li>Los IDs de los discos y canciones pueden ser obtenidos a través de los endpoints que devuelven la lista completa.</li>
+        </ul>
+    </div>
+</body>
+</html>
